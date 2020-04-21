@@ -10,7 +10,7 @@ import { getSelectedTodo } from '@app/store/todos/todos.selectors';
     selector: 'app-todo-summary-item',
     templateUrl: './todo-summary-item.component.html',
     styleUrls: ['./todo-summary-item.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodoSummaryItemComponent implements OnInit {
     form: FormGroup;
