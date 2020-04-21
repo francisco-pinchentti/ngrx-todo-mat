@@ -4,7 +4,7 @@ export class TodoItem {
     body: string;
     isDone: boolean;
 
-    constructor(id: string, title: string, body: string, isDone = false) {
+    constructor(title: string, body: string, isDone = false, id?: string) {
         this.id = id;
         this.title = title;
         this.body = body;

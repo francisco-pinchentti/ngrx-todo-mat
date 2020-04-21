@@ -1,0 +1,17 @@
+<form [formGroup]="form">
+
+    <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="" formControlName="title">
+    </mat-form-field>
+
+    <mat-checkbox [formControl]="isDone">Is Done?</mat-checkbox>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Body</mat-label>
+        <textarea matInput formControlName="body"></textarea>
+    </mat-form-field>
+
+</form>
+
+<button mat-raised-button color="accent" [disabled]="form.invalid" (click)="onSubmit()">Submit</button>

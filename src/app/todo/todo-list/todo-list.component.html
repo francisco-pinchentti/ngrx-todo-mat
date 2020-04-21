@@ -1,0 +1,25 @@
+<section>
+    <mat-expansion-panel [(expanded)]="isEditExpanded">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{ editing ? 'Update item' : 'Add new Item' }}
+            </mat-panel-title>
+            <mat-panel-description>
+
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        &nbsp;<app-todo-summary-item (onAccept)="onEditAccept($event)"></app-todo-summary-item>
+    </mat-expansion-panel>
+
+    <mat-divider></mat-divider>
+
+    <h2>
+        Todo listing &nbsp;
+        <span matBadge="{{ todos.length }}" matBadgePosition="before" matBadgeColor="accent"></span>
+    </h2>
+
+    <ng-container *ngFor="let t of todos">
+        <app-todo-card-item (click)="onCardSelected(t)" [todo]="t"></app-todo-card-item>
+    </ng-container>
+
+</section>

@@ -3,7 +3,13 @@ import { TodoActions } from '@app/store/todos/todos.action';
 import { TodoItem } from '@app/models/TodoItem';
 
 export const initialState = {
-    todos: [],
+    todos: [
+        {
+            id: '1',
+            title: 'Test',
+            body: 'Lorem Ipsum',
+        },
+    ],
 };
 
 export const producer = (draft, action) =>

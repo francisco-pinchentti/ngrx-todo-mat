@@ -5,10 +5,7 @@ import { environment } from '@env/environment';
 import { reducers } from '@app/store/reducers';
 
 @NgModule({
-    imports: [
-        StoreModule.forRoot(reducers),
-        environment.production ? [] : StoreDevtoolsModule.instrument(),
-    ],
+    imports: [StoreModule.forRoot(reducers), environment.production ? [] : StoreDevtoolsModule.instrument()],
 })
 export class AppStoreModule {
     constructor(
