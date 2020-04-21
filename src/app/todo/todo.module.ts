@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatIconModule } from '@angular/material/icon';
 
 // app
 import { TodoRoutingModule } from './todo-routing.module';
@@ -32,6 +33,7 @@ import { TodoSummaryItemComponent } from './todo-summary-item/todo-summary-item.
         MatExpansionModule,
         MatDividerModule,
         MatBadgeModule,
+        MatIconModule,
     ],
 })
 export class TodoModule {}
