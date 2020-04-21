@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test --sourceMap=false",
-    "test-cc": "ng test --sourceMap=false --codeCoverage=true --watch=false --browsers=ChromeHeadless",
+    "test-cc": "ng test --sourceMap=true --codeCoverage=true --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "format:check": "npx prettier --config .prettierrc --list-different src/app/**/*.ts",
