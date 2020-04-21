@@ -1,7 +1,7 @@
 import { ofType, unionize } from 'unionize';
 import { TodoItem } from '@app/models/TodoItem';
 
-export const UserActions = unionize(
+export const TodoActions = unionize(
     {
         Add: ofType<TodoItem>(),
         Remove: ofType<string>(),
