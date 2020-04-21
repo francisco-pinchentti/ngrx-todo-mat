@@ -9,6 +9,15 @@ import { MatBadgeModule } from '@angular/material/badge';
 
 import { TodoListComponent } from './todo-list.component';
 
+// transitive dependencies:
+import { TodoSummaryItemComponent } from '../todo-summary-item/todo-summary-item.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
+// store state:
 const initialState = {
     todos: [],
     selectedTodo: null,
@@ -28,8 +37,12 @@ describe('TodoListComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [TodoListComponent, MockedTodoSummaryItemComponent],
-            imports: [NoopAnimationsModule, MatExpansionModule, MatDividerModule, MatBadgeModule],
+            declarations: [TodoListComponent, TodoSummaryItemComponent],
+            imports: [NoopAnimationsModule, MatExpansionModule, MatDividerModule, MatBadgeModule, ReactiveFormsModule,
+                MatButtonModule,
+                MatFormFieldModule,
+                MatInputModule,
+                MatCheckboxModule,],
             providers: [provideMockStore({ initialState })],
         }).compileComponents();
         store = TestBed.inject(MockStore);
