@@ -3,18 +3,19 @@ import { TodoActions } from '@app/store/todos/todos.action';
 import { TodoItem } from '@app/models/TodoItem';
 
 export const initialState = {
-    todos: []
+    todos: [],
 };
 
-export const producer = (draft, action) => TodoActions.match(action, {
-    Add: (t: TodoItem) => {
-        draft.todos.push(t);
-    },
-    Remove: (id: string) => {
-        draft.todos = draft.todos.filter(t => t.id !== id)
-    },
-    default: () => { }
-});
+export const producer = (draft, action) =>
+    TodoActions.match(action, {
+        Add: (t: TodoItem) => {
+            draft.todos.push(t);
+        },
+        Remove: (id: string) => {
+            draft.todos = draft.todos.filter((t) => t.id !== id);
+        },
+        default: () => {},
+    });
 
 export const reducerProducer = produce(producer, initialState);
 

@@ -11,7 +11,7 @@ import { reducers } from '@app/store/reducers';
         StoreModule.forRoot(reducers),
         environment.production ? [] : StoreDevtoolsModule.instrument(),
         // EffectsModule.forRoot(effects)
-    ]
+    ],
 })
 export class AppStoreModule {
     constructor(

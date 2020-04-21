@@ -4,12 +4,7 @@ export class TodoItem {
     body: string;
     isDone: boolean;
 
-    constructor(
-        id: string,
-        title: string,
-        body: string,
-        isDone = false
-    ) {
+    constructor(id: string, title: string, body: string, isDone = false) {
         this.id = id;
         this.title = title;
         this.body = body;
@@ -23,5 +18,4 @@ export class TodoItem {
     markAsPending(): void {
         this.isDone = false;
     }
-
 }
