@@ -23,13 +23,6 @@ const initialState = {
     selectedTodo: null,
 };
 
-// mock a child component:
-@Component({
-    selector: 'app-todo-summary-item',
-    template: '<div></div>',
-})
-class MockedTodoSummaryItemComponent {}
-
 describe('TodoListComponent', () => {
     let component: TodoListComponent;
     let fixture: ComponentFixture<TodoListComponent>;
