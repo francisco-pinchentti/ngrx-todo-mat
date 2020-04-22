@@ -1,5 +1,4 @@
 import produce from 'immer';
-import { v4 as uuidv4 } from 'uuid';
 import { TodoActions } from '@app/store/todos/todos.action';
 import { TodoItem } from '@app/models/TodoItem';
 
@@ -11,7 +10,7 @@ export const initialState = {
 export const producer = (draft, action) =>
     TodoActions.match(action, {
         Add: (t: TodoItem) => {
-            draft.todos.push({ ...t, id: uuidv4() });
+            draft.todos.push(t);
         },
         Remove: (id: string) => {
             draft.todos = draft.todos.filter((t) => t.id !== id);

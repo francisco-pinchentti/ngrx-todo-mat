@@ -45,7 +45,7 @@ export class TodoSummaryItemComponent implements OnInit {
 
     public onSubmit(): void {
         const raw = this.form.getRawValue();
-        const item = new TodoItem(raw.id, raw.title, raw.body, this.isDone.value);
+        const item = new TodoItem(raw.title, raw.body, this.isDone.value, raw.id);
         if (raw.id) {
             this.store.dispatch(TodoActions.Update(item));
         } else {

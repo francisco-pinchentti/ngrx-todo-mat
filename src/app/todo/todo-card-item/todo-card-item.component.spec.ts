@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 
 // material dependencies
 import { MatCardModule } from '@angular/material/card';
@@ -12,18 +11,13 @@ import { TodoCardItemComponent } from './todo-card-item.component';
 import { TodoItem } from '@app/models/TodoItem';
 
 // mocks:
-const MOCKED_ITEM = new TodoItem('1', 'a test', 'sample body', false);
+const MOCKED_ITEM = new TodoItem('a test', 'sample body', false, '1');
 
 class TodoCardItemComponentPage {
     component: TodoCardItemComponent;
 
     constructor(private fixture: ComponentFixture<TodoCardItemComponent>) {
         this.component = fixture.componentInstance;
-    }
-
-    private getDebugElement<T>(selector: string): T {
-        const debugElement = this.fixture.debugElement.query(By.css(selector));
-        return !!debugElement ? <T>debugElement.componentInstance : null;
     }
 
     getHTMLElement<T>(selector: string): T {
