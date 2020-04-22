@@ -51,4 +51,9 @@ export class TodoListComponent implements OnInit {
             this.store.dispatch(TodoActions.Remove(t.id));
         }
     }
+
+    onPanelClosed() {
+        this.store.dispatch(TodoActions.Select(null));
+        this.isEditExpanded = false;
+    }
 }

@@ -1,5 +1,5 @@
 <section>
-    <mat-expansion-panel [(expanded)]="isEditExpanded">
+    <mat-expansion-panel [expanded]="isEditExpanded" (closed)="onPanelClosed()">
         <mat-expansion-panel-header>
             <mat-panel-title>
                 {{ panelTitle$ | async }}

@@ -5,8 +5,8 @@
     </mat-card-title>
     <mat-card-content>{{ todo?.body }}</mat-card-content>
     <mat-card-actions>
-        <mat-icon (click)="onEditClick()" aria-hidden="false" aria-label="update task">edit</mat-icon>
-        <mat-icon (click)="onDeleteClick()" aria-hidden="false" aria-label="remove task">delete</mat-icon>
+        <mat-icon class="clickable" (click)="onEditClick()" aria-hidden="false" aria-label="update task">edit</mat-icon>
+        <mat-icon class="clickable" (click)="onDeleteClick()" aria-hidden="false" aria-label="remove task">delete</mat-icon>
     </mat-card-actions>
     <mat-card-footer></mat-card-footer>
 </mat-card>
