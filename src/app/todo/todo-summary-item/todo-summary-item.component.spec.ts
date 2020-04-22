@@ -99,6 +99,23 @@ describe('TodoSummaryItemComponent', () => {
                 expect(page.submitButton.getAttribute('disabled')).toBeFalsy();
             });
         }));
+
+        it('should allow you to submit', async(() => {
+            const onSubmitSpy = spyOn(component, 'onSubmit').and.callThrough();
+            const onAcceptSpy = spyOn(component.onAccept, 'emit').and.callThrough();
+            page.titleFieldHTMLElement.value = 'a title';
+            page.titleFieldHTMLElement.dispatchEvent(new Event('input'));
+            page.bodyFieldHTMLElement.value = 'a brief body';
+            page.bodyFieldHTMLElement.dispatchEvent(new Event('input'));
+            page.matCheckBoxHTMLElement.click();
+            fixture.detectChanges();
+            page.submitButton.click();
+            fixture.detectChanges();
+            fixture.whenStable().then(() => {
+                expect(onSubmitSpy).toHaveBeenCalledTimes(1);
+                expect(onAcceptSpy).toHaveBeenCalledTimes(1);
+            });
+        }));
     });
 
     describe('when mandatory fields are incorrectly filled', () => {
