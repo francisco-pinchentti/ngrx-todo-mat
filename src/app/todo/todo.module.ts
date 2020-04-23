@@ -16,11 +16,11 @@ import { MatIconModule } from '@angular/material/icon';
 // app
 import { TodoRoutingModule } from './todo-routing.module';
 import { TodoListComponent } from './todo-list/todo-list.component';
-import { TodoCardItemComponent } from './todo-card-item/todo-card-item.component';
+import { TodoCardComponent } from './todo-card/todo-card.component';
 import { TodoFormComponent } from './todo-form/todo-form.component';
 
 @NgModule({
-    declarations: [TodoListComponent, TodoCardItemComponent, TodoFormComponent],
+    declarations: [TodoListComponent, TodoCardComponent, TodoFormComponent],
     imports: [
         CommonModule,
         TodoRoutingModule,

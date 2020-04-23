@@ -2,12 +2,12 @@ import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from 
 import { TodoItem } from '@app/models/TodoItem';
 
 @Component({
-    selector: 'app-todo-card-item',
-    templateUrl: './todo-card-item.component.html',
-    styleUrls: ['./todo-card-item.component.scss'],
+    selector: 'app-todo-card',
+    templateUrl: './todo-card.component.html',
+    styleUrls: ['./todo-card.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TodoCardItemComponent {
+export class TodoCardComponent {
     @Input()
     todo: TodoItem;
 

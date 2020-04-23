@@ -16,7 +16,7 @@ const initialState = {
 
 // mock a child component:
 @Component({
-    selector: 'app-todo-summary-item',
+    selector: 'app-todo-form',
     template: '<div></div>',
 })
 class MockedTodoFormComponent {}

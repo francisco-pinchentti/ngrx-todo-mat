@@ -5,7 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 
 // component
-import { TodoCardItemComponent } from './todo-card-item.component';
+import { TodoCardComponent } from './todo-card.component';
 
 // model
 import { TodoItem } from '@app/models/TodoItem';
@@ -13,10 +13,10 @@ import { TodoItem } from '@app/models/TodoItem';
 // mocks:
 const MOCKED_ITEM = new TodoItem('a test', 'sample body', false, '1');
 
-class TodoCardItemComponentPage {
-    component: TodoCardItemComponent;
+class TodoCardComponentPage {
+    component: TodoCardComponent;
 
-    constructor(private fixture: ComponentFixture<TodoCardItemComponent>) {
+    constructor(private fixture: ComponentFixture<TodoCardComponent>) {
         this.component = fixture.componentInstance;
     }
 
@@ -25,24 +25,24 @@ class TodoCardItemComponentPage {
     }
 }
 
-describe('TodoCardItemComponent', () => {
+describe('TodoCardComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [TodoCardItemComponent],
+            declarations: [TodoCardComponent],
             imports: [MatCardModule, MatIconModule],
         }).compileComponents();
     }));
 
     describe('when no input is given', () => {
-        let component: TodoCardItemComponent;
-        let fixture: ComponentFixture<TodoCardItemComponent>;
-        let page: TodoCardItemComponentPage;
+        let component: TodoCardComponent;
+        let fixture: ComponentFixture<TodoCardComponent>;
+        let page: TodoCardComponentPage;
 
         beforeEach(() => {
-            fixture = TestBed.createComponent(TodoCardItemComponent);
+            fixture = TestBed.createComponent(TodoCardComponent);
             component = fixture.componentInstance;
             fixture.detectChanges();
-            page = new TodoCardItemComponentPage(fixture);
+            page = new TodoCardComponentPage(fixture);
         });
 
         it('should exist', () => {
@@ -59,16 +59,16 @@ describe('TodoCardItemComponent', () => {
     });
 
     describe('when input is given', () => {
-        let component: TodoCardItemComponent;
-        let fixture: ComponentFixture<TodoCardItemComponent>;
-        let page: TodoCardItemComponentPage;
+        let component: TodoCardComponent;
+        let fixture: ComponentFixture<TodoCardComponent>;
+        let page: TodoCardComponentPage;
 
         beforeEach(() => {
-            fixture = TestBed.createComponent(TodoCardItemComponent);
+            fixture = TestBed.createComponent(TodoCardComponent);
             component = fixture.componentInstance;
             component.todo = MOCKED_ITEM;
             fixture.detectChanges();
-            page = new TodoCardItemComponentPage(fixture);
+            page = new TodoCardComponentPage(fixture);
         });
 
         it('should exist', () => {
