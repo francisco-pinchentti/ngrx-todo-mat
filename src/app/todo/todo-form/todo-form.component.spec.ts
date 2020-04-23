@@ -12,7 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 // component
-import { TodoSummaryItemComponent } from './todo-summary-item.component';
+import { TodoFormComponent } from './todo-form.component';
 
 // mocks store
 const initialState = {
@@ -20,10 +20,10 @@ const initialState = {
     selectedTodo: null,
 };
 
-class TodoSummaryItemComponentPage {
-    component: TodoSummaryItemComponent;
+class TodoFormComponentPage {
+    component: TodoFormComponent;
 
-    constructor(private fixture: ComponentFixture<TodoSummaryItemComponent>) {
+    constructor(private fixture: ComponentFixture<TodoFormComponent>) {
         this.component = fixture.componentInstance;
     }
 
@@ -48,15 +48,15 @@ class TodoSummaryItemComponentPage {
     }
 }
 
-describe('TodoSummaryItemComponent', () => {
-    let component: TodoSummaryItemComponent;
-    let fixture: ComponentFixture<TodoSummaryItemComponent>;
+describe('TodoFormComponent', () => {
+    let component: TodoFormComponent;
+    let fixture: ComponentFixture<TodoFormComponent>;
     let store: MockStore;
-    let page: TodoSummaryItemComponentPage;
+    let page: TodoFormComponentPage;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [TodoSummaryItemComponent],
+            declarations: [TodoFormComponent],
             imports: [
                 NoopAnimationsModule,
                 ReactiveFormsModule,
@@ -72,8 +72,8 @@ describe('TodoSummaryItemComponent', () => {
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(TodoSummaryItemComponent);
-        page = new TodoSummaryItemComponentPage(fixture);
+        fixture = TestBed.createComponent(TodoFormComponent);
+        page = new TodoFormComponentPage(fixture);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

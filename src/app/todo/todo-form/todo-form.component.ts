@@ -7,12 +7,12 @@ import { TodoActions } from '@app/store/todos/todos.action';
 import { getSelectedTodo } from '@app/store/todos/todos.selectors';
 
 @Component({
-    selector: 'app-todo-summary-item',
-    templateUrl: './todo-summary-item.component.html',
-    styleUrls: ['./todo-summary-item.component.scss'],
+    selector: 'app-todo-form',
+    templateUrl: './todo-form.component.html',
+    styleUrls: ['./todo-form.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TodoSummaryItemComponent implements OnInit {
+export class TodoFormComponent implements OnInit {
     form: FormGroup;
     isDone = new FormControl(false);
 

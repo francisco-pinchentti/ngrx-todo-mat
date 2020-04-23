@@ -19,7 +19,7 @@ const initialState = {
     selector: 'app-todo-summary-item',
     template: '<div></div>',
 })
-class MockedTodoSummaryItemComponent {}
+class MockedTodoFormComponent {}
 
 describe('TodoListComponent', () => {
     let component: TodoListComponent;
@@ -28,7 +28,7 @@ describe('TodoListComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [TodoListComponent, MockedTodoSummaryItemComponent],
+            declarations: [TodoListComponent, MockedTodoFormComponent],
             imports: [NoopAnimationsModule, MatExpansionModule, MatDividerModule, MatBadgeModule],
             providers: [provideMockStore({ initialState })],
         }).compileComponents();
