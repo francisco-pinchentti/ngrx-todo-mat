@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app/store/reducers';
 import { Observable } from 'rxjs';
@@ -13,14 +13,13 @@ import { TodoActions } from '@app/store/todos/todos.action';
     styleUrls: ['./todo-list.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TodoListComponent implements OnInit {
-    public todos: TodoItem[] = [];
+export class TodoListComponent {
     public isEditExpanded = false;
 
     constructor(private store: Store<AppState>) {}
 
-    ngOnInit(): void {
-        this.store.select(getTodosList).subscribe((todos) => (this.todos = todos));
+    get todos$() {
+        return this.store.select(getTodosList);
     }
 
     get panelTitle$(): Observable<string> {
