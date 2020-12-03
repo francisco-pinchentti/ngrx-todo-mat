@@ -16,8 +16,10 @@ import { TodoFormComponent } from './todo-form.component';
 
 // mocks store
 const initialState = {
-    todos: [],
-    selectedTodo: null,
+    todos: {
+        todos: [],
+        selectedTodo: null,
+    }
 };
 
 class TodoFormComponentPage {
